@@ -1,35 +1,36 @@
-#- hosts: db
+- hosts: s1.infra
 #  become: true
-#  vars:
-#    mariadb_bind_address: '0.0.0.0'
-#    mariadb_root_password: '&othErEek97FrewlAyd?'
-#    mariadb_databases:
-#      - name: wordpress_db
-#    mariadb_users:
-#      - name: wordpress_usr
-#        password: ywIapecJalg6
+  roles:
+    - adfinis-sygroup.mariadb
+
+  vars:
+    mariadb_bind_address: '0.0.0.0'
+    mariadb_root_password: '&othErEek97FrewlAyd?'
+    mariadb_databases:
+      - name: wordpress_db
+    mariadb_users:
+      - name: wordpress_usr
+        password: ywIapecJalg6
 #        priv: wordpress_db.*:ALL
 #        host: '192.168.56.%'
-#  roles:
-#    - bertvv.mariadb
 
-#- hosts: test_word
-- hosts: all 
-#  become: true
-#  vars:
-#    wordpress_database_host: db
-#    wordpress_database: wordpress_db
-#    wordpress_user: wordpress_usr
-#    wordpress_password: ywIapecJalg6
-#    wordpress_plugins:
+- hosts: s0.infra
+  #    become: true
+  roles:
+    - darthwade.wordpress
+  
+  vars:
+    wordpress_database_host: db
+    wordpress_database: wordpress_db
+    wordpress_user: wordpress_usr
+    wordpress_password: ywIapecJalg6
+#      wordpress_plugins:
 #      - name: wp-super-cache
 #        version: 1.6.4
 #      - name: jetpack
-#        version: '6.5'
+#       version: '6.5'
 #      - name: lipsum
 #    wordpress_themes:
 #      - name: xcel
 #        version: 1.2.01
-  roles:
-    - bertvv.httpd
-#    - darthwade.wordpress
+
