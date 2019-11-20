@@ -17,11 +17,13 @@ apt-get install -y \
     vim \
     gnupg2 \
     python3 \
-    software-properties-common
+    software-properties-common 
 
-if [ "$HOSTNAME" = "control" ]; then
+  if [ "$HOSTNAME" = "control" ]; then
 	apt-get install -y \
-		ansible	
+		ansible \
+	        build-essential
+	
 
 	# J'ajoute les deux clefs sur le noeud de controle
 	mkdir -p /root/.ssh
