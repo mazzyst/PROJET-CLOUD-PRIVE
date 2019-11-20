@@ -1,0 +1,21 @@
+control ansible_user=root
+s0.infra ansible_user=root
+s1.infra ansible_user=root
+s2.infra ansible_user=root
+s3.infra ansible_user=root
+s4.infra ansible_user=root
+
+[DNSmasq]
+s0.infra 
+
+[wordpress]
+s1.infra 
+s2.infra 
+
+[Mariadb]
+s3.infra
+
+[NFS_server]
+s4.infra
+
+
