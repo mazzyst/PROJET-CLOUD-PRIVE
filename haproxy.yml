@@ -1,0 +1,13 @@
+- hosts: s0.infra
+  sudo: yes
+  roles:
+    - role: geerlingguy.haproxy
+
+- hosts: s0.infra
+  sudo: yes
+  roles:
+  - role: geerlingguy.haproxy
+    vars:
+      haproxy_backend_servers:
+        - name: app1
+          address: s1.infra:80  
