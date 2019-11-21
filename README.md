@@ -5,7 +5,13 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
 -le fichier test.yml contient le play book a executer
 -le dossier group_vars contient les variables utilisée
+-le fichier vagrantfile et provision pour lancer vagrant
 
+-il faut commencer par lancer vagrant: 
+     vagrant up
+-il faut se connecter sur la machine control:
+     vagrant ssh control
+     
 le Makefile a executer a partir de la machine control
 
 
