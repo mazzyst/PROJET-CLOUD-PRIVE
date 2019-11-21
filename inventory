@@ -7,6 +7,9 @@ s4.infra ansible_user=root
 [dnsmasq]
 s0.infra 
 
+[haproxy]
+s0.infra
+
 [wordpress]
 s1.infra 
 s2.infra 

@@ -5,6 +5,7 @@ mariadb_root_password: 'admin1234'
 mariadb_databases:
   - name: wordpress_db
 #    encoding: utf8
+
 mariadb_users:
   - name: wordpress_usr
     password: 'wordpress_usr123'
