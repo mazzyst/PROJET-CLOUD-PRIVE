@@ -1,21 +1,8 @@
-- hosts: s3.infra
-#  become: true
+- hosts: mariadb
   roles:
     - adfinis-sygroup.mariadb
 
-  vars:
-    mariadb_bind_address: '0.0.0.0'
-    mariadb_root_password: 'admin1234'
-    mariadb_databases:
-      - name: wordpress_db
-    mariadb_users:
-      - name: wordpress_usr
-        password: 'wordpress_usr123'
-#        priv: wordpress_db.*:ALL
-#        host: '192.168.56.%'
-
-- hosts: s1.infra
-  #    become: true
+- hosts: wordpress
   roles:
     - makarenalabs.wordpress       
   
