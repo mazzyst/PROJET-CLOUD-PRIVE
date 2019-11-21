@@ -1,2 +1,19 @@
 # PROJET-CLOUD-PRIVE
-Collaborators: Samuel, Hamdi, Kaddour, Mohamed
+Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
+
+-le fichier inventory contient la liste de serveurs a provisionner.
+
+-le fichier test.yml contient le play book a executer
+-le dossier group_vars contient les variables utilisée
+
+le Makefile a executer a partir de la machine control
+
+
+
+
+=============il faut executer:=================
+   1-le fichier make pour installation des roles:
+         make galaxy
+         
+   2- le fichier make pour executer le playbook test:
+           make test_play
