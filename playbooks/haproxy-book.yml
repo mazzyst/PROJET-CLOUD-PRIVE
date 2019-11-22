@@ -1,0 +1,9 @@
+- hosts: haproxy
+  sudo: yes
+  roles:
+    - role: geerlingguy.haproxy
+
+- hosts: s0.infra
+  sudo: yes
+  roles:
+  - role: geerlingguy.haproxy
