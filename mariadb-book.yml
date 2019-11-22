@@ -1,3 +1,0 @@
-- hosts: mariadb
-  roles:
-    - adfinis-sygroup.mariadb

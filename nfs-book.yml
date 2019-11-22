@@ -1,3 +1,0 @@
-- hosts: nfs_server
-  roles:
-    - role: geerlingguy.nfs 
