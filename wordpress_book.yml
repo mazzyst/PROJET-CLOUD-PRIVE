@@ -1,5 +1,13 @@
 - hosts: wordpress
-  roles:
-    - makarenalabs.wordpress       
-  
-  
+  tasks:
+    - name: wordpress install
+      include_role:
+        name: makarenalabs.wordpress
+      vars:
+        wp_sitename: "{{ item }}"
+        wp_install_dir: "/var/www/{{ item }}"
+      with_items:
+        - "devops.com"
+        - "devsec.com"
+        - "devsecops.com"
+

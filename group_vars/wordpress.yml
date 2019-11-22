@@ -1,20 +1,21 @@
 apache_virtual_hosts:
-  - dns: devops.com
-  - dns: devsec.com
-  - dns: devsecops.com
+  - devops.com
+  - devsec.com
+  - devsecops.com
 
 wp_version: 5.0.3
 wp_db_host: s3.infra
 wp_mysql_db: 'wordpress_db'
 wp_mysql_user: 'wordpress_usr'
 wp_mysql_password: 'wordpress_usr123'
+wp_debug: true
  
 wordpress_user: wordpress_usr
 wordpress_password: 'wordpress_usr123'
 wp_webserver: apache
 
-wp_sitename: devops.com
-wp_install_dir: /var/www/devops.com
+#wp_sitename: 
+#wp_install_dir: /var/www/devops
 
 #    wp_sitename: "{{ item.dns }}"
 wp_admin_email: 'your@email.com'
