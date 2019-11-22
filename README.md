@@ -9,6 +9,10 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
 -le fichier vagrantfile et provision.sh sert à lancer vagrant.
 
+-Créer la paire de clefs SSH :
+
+     ssh-keygen
+
 -il faut commencer par lancer vagrant: 
 
      vagrant up
