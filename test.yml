@@ -1,9 +1,0 @@
-- hosts: mariadb
-  roles:
-    - adfinis-sygroup.mariadb
-
-- hosts: wordpress
-  roles:
-    - makarenalabs.wordpress       
-  
-  

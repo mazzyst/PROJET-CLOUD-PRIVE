@@ -1,5 +1,5 @@
 test_play:
-	ansible-playbook -v -i inventory test.yml 
+	ansible-playbook -v -i inventory playbooks/wordpress-book.yml playbooks/mariadb-book.yml  
 
 galaxy:
 	ansible-galaxy install adfinis-sygroup.mariadb

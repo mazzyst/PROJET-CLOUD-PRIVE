@@ -1,5 +1,7 @@
 mariadb_bind_address: '0.0.0.0'
 
+#mariadb_root_password: 'admin1234'
+
 mariadb_databases:
   - name: wordpress_db
 #    encoding: utf8
@@ -8,5 +10,6 @@ mariadb_users:
   - name: wordpress_usr
     password: 'wordpress_usr123'
     priv: '*.*:ALL,GRANT'
+    priv: 'wordpress_db.*:ALL'
     host: '%'
 
