@@ -7,9 +7,9 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
 -le dossier group_vars contient les variables utilisées dans les playbooks du dossier playbooks.
 
--le fichier vagrantfile et provision.sh sert à lancer vagrant.
+-le fichier vagrantfile et provision.sh serventt à lancer vagrant.
 
--les fichiers ansible_rsa et ansible_rsa.pub sont les clés ssh que vagrant va injecter dans les services pour assurer leur communications en ssh:
+-les fichiers ansible_rsa et ansible_rsa.pub sont les clés ssh que vagrant va injecter dans les services pour assurer leurs communications en ssh:
 
 -il faut commencer par lancer vagrant: 
 
