@@ -19,7 +19,7 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
      vagrant ssh control
      
--il faut cloner le meme depot git a l'interieur de control, la prochaine etape et d'introduire cette etape dans un deuxieme provision (provision2.sh).
+-il faut cloner le meme depot git a l'interieur de control, la prochaine etape est d'introduire cette etape dans un deuxieme provision (provision2.sh).
 
 -il faut acceder au repertoire "PROJET-CLOUD-PRIVE".
 
