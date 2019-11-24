@@ -1,27 +1,55 @@
-apache_virtual_hosts:
-  - devops.com
-  - devsec.com
-  - devsecops.com
-
-wp_version: 5.0.3
-wp_db_host: s3.infra
-wp_mysql_db: 'wordpress_db'
-wp_mysql_user: 'wordpress_usr'
-wp_mysql_password: 'wordpress_usr123'
-wp_debug: true
- 
-wordpress_user: wordpress_usr
-wordpress_password: 'wordpress_usr123'
-wp_webserver: apache
-
-#wp_sitename: 
-#wp_install_dir: /var/www/devops
-
-#    wp_sitename: "{{ item.dns }}"
-wp_admin_email: 'your@email.com'
-#    wp_install_dir: "/var/www/{{ item.dns }}"
-    
-    #  with_items: "{{ apache_virtual_hosts }}"
-
-
-
+wordpress_installs:
+  - name: devops
+    dbname: devops_db
+    dbuser: devops_user
+    dbpass: "devops_user123"
+    dbhost: s3.infra
+    path: "/var/www/devops.com"
+    title: devops
+    admin_name: admin
+    admin_email: "admin@devops.com"
+    admin_password: admin
+    url: http://devops.com
+    themes:
+      - name: twentytwelve
+        activate: true
+    plugins: []
+    users: {}
+    options: []
+    queries: []      
+  - name: devsec
+    dbname: devsec_db
+    dbuser: devsec_user
+    dbpass: "devsec_user123"
+    dbhost: s3.infra
+    path: "/var/www/devsec.com"
+    title: devsec
+    admin_name: admin
+    admin_email: "admin@devsec.com"
+    admin_password: admin
+    url: http://devsec.com
+    themes:
+      - name: twentytwelve
+        activate: true  
+    plugins: []
+    users: {}
+    options: []
+    queries: []        
+  - name: devsecops
+    dbname: devsecops_db
+    dbuser: devsecops_user
+    dbpass: "devsecops_user123"
+    dbhost: s3.infra
+    path: "/var/www/devsecops.com"
+    title: devsecops
+    admin_name: admin
+    admin_email: "admin@devsecops.com"
+    admin_password: admin
+    url: http://devsecops.com
+    themes:
+      - name: twentytwelve
+        activate: true
+    plugins: []
+    users: {}
+    options: []
+    queries: []        

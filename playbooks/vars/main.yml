@@ -1,0 +1,19 @@
+mysql_bind_address: '0.0.0.0'
+mysql_root_password: super-secure-password
+mysql_databases:
+  - name: devops_db
+  - name: devsec_db
+  - name: devsecops_db
+mysql_users:
+  - name: devops_user
+    password: 'devops_user123'
+    priv: 'devops_db.*:ALL'
+    host: '%'
+  - name: devsec_user
+    password: 'devsec_user123'
+    priv: 'devsec_db.*:ALL'
+    host: '%'
+  - name: devsecops_user
+    password: 'devsecops_user123'
+    priv: 'devsecops_db.*:ALL'
+    host: '%'
