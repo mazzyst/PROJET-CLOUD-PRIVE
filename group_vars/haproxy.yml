@@ -1,4 +1,4 @@
-haproxy_backend_servers:
+haproxy_backend_servers:        
   - name: s1.infra
     address: s1.infra:80
   - name: wordpress_s2
