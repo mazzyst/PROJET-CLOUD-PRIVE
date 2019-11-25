@@ -1,4 +1,4 @@
 - hosts: haproxy
-  sudo: yes
+  become: true
   roles:
     - role: geerlingguy.haproxy

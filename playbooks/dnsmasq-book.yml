@@ -1,0 +1,13 @@
+- hosts: dnsmasq
+  connection: local
+  become: true
+  roles:
+    - oefenweb.dnsmasq
+  vars:
+    dnsmasq_dnsmasq_d_files_present:
+      infra:
+        - address=/s0.infra/192.168.50.10
+        - address=/s1.infra/192.168.50.20
+        - address=/s2.infra/192.168.50.30
+        - address=/s3.infra/192.168.50.40
+        - address=/s4.infra/192.168.50.50

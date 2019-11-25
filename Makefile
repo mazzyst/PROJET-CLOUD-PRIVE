@@ -1,5 +1,5 @@
 test_play:
-	ansible-playbook -v -i inventory playbooks/wordpress-book.yml playbooks/mariadb-book.yml  
+	ansible-playbook -v -i inventory playbooks/haproxy-book.yml playbooks/nfs-book.yml playbooks/mariadb-book.yml playbooks/wordpress-book.yml 
 
 galaxy:
 	ansible-galaxy install oefenweb.wordpress
