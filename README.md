@@ -1,32 +1,32 @@
 # PROJET-CLOUD-PRIVE
 Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
--le fichier inventory contient la liste de serveurs a provisionner.
+- Le fichier inventory contient la liste de serveurs à provisionner.
 
--le dossier playbooks contient les play book a executer a travers un makefile.
+- Le dossier playbooks contient les playbooks à executer à travers un makefile.
 
--le dossier group_vars contient les variables utilisées dans les playbooks du dossier playbooks.
+- Le dossier group_vars contient les variables utilisées dans les playbooks du dossier playbooks.
 
--le fichier vagrantfile et provision.sh serventt à lancer vagrant.
+- Le fichier vagrantfile et provision.sh serventt à lancer vagrant.
 
--les fichiers ansible_rsa et ansible_rsa.pub sont les clés ssh que vagrant va injecter dans les services pour assurer leurs communications en ssh:
+- Il faut générer génerer une paire de clé appelée "ansible_rsa" (public et privée), qui sert à la communication entre les serveurs en   ssh:
 
--il faut commencer par lancer vagrant: 
+       ssh-keygen
 
-     vagrant up
+- Il faut commencer par lancer vagrant: 
+
+       vagrant up
      
--il faut se connecter sur la machine control:
+- Il faut se connecter sur la machine control:
 
-     vagrant ssh control
+       vagrant ssh control
      
--il faut cloner le meme depot git a l'interieur de control, la prochaine etape est d'introduire cette etape dans un deuxieme provision (provision2.sh).
+- Il faut acceder au repertoire "/src/install_infra".
 
--il faut acceder au repertoire "PROJET-CLOUD-PRIVE".
-
--il faut executer le makefile comme suit:
+- Il faut executer le makefile comme suit:
 
         1- le fichier make pour installation des roles:
-               make galaxy
+               make galaxy   (a ne pas faire , fait automatiquement lors du vagrant up) 
          
         2- le fichier make pour executer le playbook test:
                make test_play
