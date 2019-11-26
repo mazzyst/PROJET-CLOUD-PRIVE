@@ -7,3 +7,4 @@ galaxy:
 	ansible-galaxy install geerlingguy.php
 	ansible-galaxy install geerlingguy.haproxy
 	ansible-galaxy install geerlingguy.nfs
+	ansible-galaxy install geerlingguy.apache

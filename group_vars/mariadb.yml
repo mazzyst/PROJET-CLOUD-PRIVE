@@ -1,23 +1,23 @@
-mariadb_bind_address: '0.0.0.0'
+#mariadb_bind_address: '0.0.0.0'
 
-mariadb_databases_list:
- - devops_db
- - devsec_db
- - devsecops_db
+#mariadb_databases_list:
+# - devops_db
+# - devsec_db
+# - devsecops_db
 
-mariadb_users_list:
- - name: devops_user
-   password: 'devops_user123'
-   priv: 'devops_db.*:ALL'
-   host: '%'
- - name: devsec_user
-   password: 'devsec_user123'
-   priv: 'devsec_db.*:ALL'
-   host: '%'
- - name: devsecops_user
-   password: 'devsecops_user123'
-   priv: 'devsecops_db.*:ALL'
-   host: '%'
+#mariadb_users_list:
+# - name: devops_user
+#   password: 'devops_user123'
+#   priv: 'devops_db.*:ALL'
+#   host: '%'
+# - name: devsec_user
+#   password: 'devsec_user123'
+#   priv: 'devsec_db.*:ALL'
+#   host: '%'
+# - name: devsecops_user
+#   password: 'devsecops_user123'
+#   priv: 'devsecops_db.*:ALL'
+#   host: '%'
 
 #mariadb_databases:
 #  - name: wordpress_db

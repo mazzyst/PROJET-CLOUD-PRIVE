@@ -1,5 +1,6 @@
+haproxy_backend_httpchk: ''
 haproxy_backend_servers:        
   - name: s1.infra
     address: s1.infra:80
-  - name: wordpress_s2
+  - name: s2.infra
     address: s2.infra:80
