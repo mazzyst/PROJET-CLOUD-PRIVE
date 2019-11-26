@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   # Limiter la RAM des VM
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1200"
+    vb.memory = "800"
     vb.gui = false
   end
 

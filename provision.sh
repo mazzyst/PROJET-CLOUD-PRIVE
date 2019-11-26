@@ -42,21 +42,46 @@ apt-get install -y \
 	ssh-add ~/.ssh/ansible_rsa
 	## END PROVISION
 	MARK
+	
+	cat > /home/vagrant/.ssh/config <<-MARK          #indiquer a ssh d'utiliser cette clé et pas d'autres pour se connecter sur les differents serveurs
+	Host *.infra
+    IdentityFile ~/.ssh/ansible_rsa
+    User root
+MARK
+
+	
+	
+#	cat >> /etc/hosts <<MARK
+#    ## BEGIN PROVISION
+#    192.168.50.250      control
+#    192.168.50.10       s0.infra
+#    192.168.50.20       s1.infra
+#    192.168.50.30       s2.infra
+#    192.168.50.40       s3.infra
+#    192.168.50.50       s4.infra 
+    ## END PROVISION
+#MARK
+
 fi
 
 sed -i \
 	-e '/^## BEGIN PROVISION/,/^## END PROVISION/d' \
 	/etc/hosts
+	
 cat >> /etc/hosts <<MARK
-## BEGIN PROVISION
+# BEGIN PROVISION
 192.168.50.250      control
 192.168.50.10       s0.infra
 192.168.50.20       s1.infra
 192.168.50.30       s2.infra
 192.168.50.40       s3.infra
 192.168.50.50       s4.infra
-## END PROVISION
+# END PROVISION
 MARK
+cat >> /etc/resolv.conf <<MARK
+servername 192.168.50.10
+MARK
+
 
 # J'autorise la clef sur tous les serveurs
 mkdir -p /root/.ssh
@@ -74,12 +99,14 @@ chmod 0700 /root/.ssh
 
 
 if [ "$HOSTNAME" = "control" ]; then
+    rm -rf /home/src 
     mkdir -p /home/vagrant/src
     mkdir -p /home/vagrant/src/install_infra_classique
     cp /vagrant/Makefile /home/vagrant/src/install_infra_classique/Makefile
     cp /vagrant/inventory /home/vagrant/src/install_infra_classique/inventory
     cp -r /vagrant/group_vars /home/vagrant/src/install_infra_classique/group_vars
-    cp -r /vagrant/playbooks /home/vagrant/src/install_infra_classique/playbooks
+    cp -r /vagrant/playbooks /home/vagrant/src/install_infra_classique/playbooks/
+    chown -R vagrant:vagrant /home/vagrant/src
     
     su vagrant -c "ssh-keyscan s0.infra >> ~/.ssh/known_hosts"
     su vagrant -c "ssh-keyscan s1.infra >> ~/.ssh/known_hosts"
@@ -93,8 +120,10 @@ if [ "$HOSTNAME" = "control" ]; then
 #    su vagrant -c "sudo ssh-keyscan s3.infra >> /etc/ssh/ssh_known_hosts"
 #    su vagrant -c "sudo ssh-keyscan s4.infra >> /etc/ssh/ssh_known_hosts"
     #cd src/install_infra_classique
-    su vagrant -c "cd src/install_infra_classique && make galaxy"
-    su vagrant -c "cd src/install_infra_classique && make test_play"
+    su -l vagrant -c "cd src/install_infra_classique && make galaxy"         #-l veut dire mettre l'environement de l'utilisateur vagrant at ps de root
+    su -l vagrant -c "cd src/install_infra_classique && make test_play"
+    
+    
 
 fi
 
