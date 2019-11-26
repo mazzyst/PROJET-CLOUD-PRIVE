@@ -78,9 +78,11 @@ cat > /etc/hosts <<MARK
 192.168.50.50       s4.infra
 # END PROVISION
 MARK
-cat > /etc/resolv.conf <<MARK
-servername 192.168.50.10
-MARK
+#cat > /etc/resolv.conf <<MARK
+
+#servername 192.168.50.10
+#servername 1.1.1.1
+#MARK
 
 
 # J'autorise la clef sur tous les serveurs
