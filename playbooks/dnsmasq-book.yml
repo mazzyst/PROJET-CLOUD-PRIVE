@@ -1,5 +1,4 @@
 - hosts: dnsmasq
-  connection: local
   become: true
   roles:
     - oefenweb.dnsmasq
