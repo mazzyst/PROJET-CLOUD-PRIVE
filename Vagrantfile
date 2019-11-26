@@ -25,10 +25,10 @@ Vagrant.configure("2") do |config|
     config.vm.define "s#{idx+1}.infra" do |machine|
       machine.vm.hostname = "s#{idx+1}.infra" 
       machine.vm.network "private_network", ip: "192.168.50.#{idx * 10 + 20}" # <<<<  Corriger ICI
-  #    if idx == 0 
-  #      machine.vm.network "forwarded_port", guest: 80, host: 1088
+      if idx == 0 
+        machine.vm.network "forwarded_port", guest: 80, host: 1088
   #      machine.vm.network "forwarded_port", guest: 8080, host: 8088
-  #    end
+      end
     end
   end
 
