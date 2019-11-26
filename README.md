@@ -9,7 +9,9 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
 -le fichier vagrantfile et provision.sh serventt à lancer vagrant.
 
--les fichiers ansible_rsa et ansible_rsa.pub sont les clés ssh que vagrant va injecter dans les services pour assurer leurs communications en ssh:
+- Il faut générer génerer une paire de clé appelée "ansible_rsa" (public et privée), pour l'utiliser à la communication des serveurs en ssh:
+
+     ssh-keygen
 
 -il faut commencer par lancer vagrant: 
 
@@ -19,14 +21,12 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
      vagrant ssh control
      
--il faut cloner le meme depot git a l'interieur de control, la prochaine etape est d'introduire cette etape dans un deuxieme provision (provision2.sh).
-
--il faut acceder au repertoire "PROJET-CLOUD-PRIVE".
+-il faut acceder au repertoire "/src/install_infra".
 
 -il faut executer le makefile comme suit:
 
         1- le fichier make pour installation des roles:
-               make galaxy
+               make galaxy   (a ne pas faire , fait automatiquement lors du vagrant up) 
          
         2- le fichier make pour executer le playbook test:
                make test_play
