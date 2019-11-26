@@ -3,7 +3,7 @@ test_play:
 
 galaxy:
 	ansible-galaxy install oefenweb.wordpress
-	ansible-galaxy install geerlingguy.mysql
+	ansible-galaxy install adfinis-sygroup.mariadb
 	ansible-galaxy install geerlingguy.php
 	ansible-galaxy install geerlingguy.haproxy
 	ansible-galaxy install geerlingguy.nfs
