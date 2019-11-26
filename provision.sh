@@ -17,12 +17,13 @@ apt-get install -y \
     vim \
     gnupg2 \
     python3 \
-    software-properties-common 
+    software-properties-common \
+    w3m
 
   if [ "$HOSTNAME" = "control" ]; then
 	apt-get install -y \
 		ansible \
-	        build-essential
+	    build-essential
 	
 
 	# J'ajoute les deux clefs sur le noeud de controle
@@ -70,6 +71,33 @@ touch /root/.ssh/config
 chmod 0600 /root/.ssh/*
 chmod 0644 /root/.ssh/config
 chmod 0700 /root/.ssh
+
+
+if [ "$HOSTNAME" = "control" ]; then
+    mkdir -p /home/vagrant/src
+    mkdir -p /home/vagrant/src/install_infra_classique
+    cp /vagrant/Makefile /home/vagrant/src/install_infra_classique/Makefile
+    cp /vagrant/inventory /home/vagrant/src/install_infra_classique/inventory
+    cp -r /vagrant/group_vars /home/vagrant/src/install_infra_classique/group_vars
+    cp -r /vagrant/playbooks /home/vagrant/src/install_infra_classique/playbooks
+    
+    su vagrant -c "ssh-keyscan s0.infra >> ~/.ssh/known_hosts"
+    su vagrant -c "ssh-keyscan s1.infra >> ~/.ssh/known_hosts"
+    su vagrant -c "ssh-keyscan s2.infra >> ~/.ssh/known_hosts"
+    su vagrant -c "ssh-keyscan s3.infra >> ~/.ssh/known_hosts"
+    su vagrant -c "ssh-keyscan s4.infra >> ~/.ssh/known_hosts"
+    
+#    su vagrant -c "sudo ssh-keyscan s0.infra >> /etc/ssh/ssh_known_hosts"
+#    su vagrant -c "sudo ssh-keyscan s1.infra >> /etc/ssh/ssh_known_hosts"
+#    su vagrant -c "sudo ssh-keyscan s2.infra >> /etc/ssh/ssh_known_hosts"
+#    su vagrant -c "sudo ssh-keyscan s3.infra >> /etc/ssh/ssh_known_hosts"
+#    su vagrant -c "sudo ssh-keyscan s4.infra >> /etc/ssh/ssh_known_hosts"
+    #cd src/install_infra_classique
+    su vagrant -c "cd src/install_infra_classique && make galaxy"
+    su vagrant -c "cd src/install_infra_classique && make test_play"
+
+fi
+
 
 echo "SUCCESS."
 
