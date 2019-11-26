@@ -104,7 +104,7 @@ if [ "$HOSTNAME" = "control" ]; then
     mkdir -p /home/vagrant/src/install_infra_classique
     cp /vagrant/Makefile /home/vagrant/src/install_infra_classique/Makefile
     cp /vagrant/inventory /home/vagrant/src/install_infra_classique/inventory
-    cp -r /vagrant/group_vars /home/vagrant/src/install_infra_classique/group_vars
+    cp -r /vagrant/group_vars /home/vagrant/src/install_infra_classique/group_vars/
     cp -r /vagrant/playbooks /home/vagrant/src/install_infra_classique/playbooks/
     chown -R vagrant:vagrant /home/vagrant/src
     
