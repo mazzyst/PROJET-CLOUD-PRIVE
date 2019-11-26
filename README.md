@@ -9,7 +9,7 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
 -le fichier vagrantfile et provision.sh serventt à lancer vagrant.
 
-- Il faut générer génerer une paire de clé appelée "ansible_rsa" (public et privée), pour l'utiliser à la communication des serveurs en ssh:
+-Il faut générer génerer une paire de clé appelée "ansible_rsa" (public et privée), pour l'utiliser à la communication des serveurs en ssh:
 
      ssh-keygen
 
