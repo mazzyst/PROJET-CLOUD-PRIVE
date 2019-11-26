@@ -45,8 +45,8 @@ apt-get install -y \
 	
 	cat > /home/vagrant/.ssh/config <<-MARK          #indiquer a ssh d'utiliser cette clé et pas d'autres pour se connecter sur les differents serveurs
 	Host *.infra
-    IdentityFile ~/.ssh/ansible_rsa
-    User root
+        IdentityFile ~/.ssh/ansible_rsa
+        User root
 MARK
 
 	
