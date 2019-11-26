@@ -1,6 +1,21 @@
+#- hosts: mariadb
+#  become: yes
+#  roles:
+#    - role: geerlingguy.mysql
+#
+
 - hosts: mariadb
-  become: yes
-  vars_files:
-    - vars/main.yml
-  roles:
-    - role: geerlingguy.mysql
+  tasks:
+    - name: mariadb install
+      include_role:
+        name: adfinis-sygroup.mariadb
+      vars:
+        mariadb_databases:
+          - name: "{{ item }}_db"
+        mariadb_users:
+          - name: "{{ item  }}_user"
+            password: "{{ item }}_user123"
+            priv: '*.*:ALL,GRANT'
+            # priv: '"{{ item }}_db".*:ALL,GRANT:ALL'
+            host: '%'
+      with_items: "{{ databases_names }}"
