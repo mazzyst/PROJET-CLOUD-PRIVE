@@ -68,7 +68,7 @@ sed -i \
 	-e '/^## BEGIN PROVISION/,/^## END PROVISION/d' \
 	/etc/hosts
 	
-cat >> /etc/hosts <<MARK
+cat > /etc/hosts <<MARK
 # BEGIN PROVISION
 192.168.50.250      control
 192.168.50.10       s0.infra
@@ -78,7 +78,7 @@ cat >> /etc/hosts <<MARK
 192.168.50.50       s4.infra
 # END PROVISION
 MARK
-cat >> /etc/resolv.conf <<MARK
+cat > /etc/resolv.conf <<MARK
 servername 192.168.50.10
 MARK
 
