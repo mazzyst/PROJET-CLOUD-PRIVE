@@ -11,15 +11,15 @@ Collaborators: Samuel, Hamdi, Kaddour, Mohamed Amine
 
 - Il faut générer génerer une paire de clé appelée "ansible_rsa" (public et privée), qui sert à la communication entre les serveurs en   ssh:
 
-     ssh-keygen
+       ssh-keygen
 
 - Il faut commencer par lancer vagrant: 
 
-     vagrant up
+       vagrant up
      
 - Il faut se connecter sur la machine control:
 
-     vagrant ssh control
+       vagrant ssh control
      
 - Il faut acceder au repertoire "/src/install_infra".
 
